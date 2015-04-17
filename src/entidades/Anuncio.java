@@ -31,10 +31,10 @@ public class Anuncio {
   }
    
     //El metodo de acontinuacion le da la oportunidad al usuario de subir un anuncio de interes
-    public void darAltaAnuncio(int idAnuncio,String tituloAnuncio, String descripcion, String fechaPublicacion) {
+    public void darAltaAnuncio(int idAnuncio,Suscriptor suscrip,String tituloAnuncio, String descripcion, String fechaPublicacion) {
         try {
          String s = 
-           "INSERT INTO anuncio VALUES("+idAnuncio+","+tituloAnuncio+","+descripcion+","+fechaPublicacion+")";
+           "INSERT INTO anuncio VALUES("+idAnuncio+","+suscrip.getIdSuscriptor()+","+tituloAnuncio+","+descripcion+","+fechaPublicacion+")";
          conexion.stmt.executeUpdate(s);
          
       } catch (SQLException e) {System.out.println ("Cannot execute disposicion()" + e);}
